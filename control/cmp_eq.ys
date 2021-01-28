@@ -1,0 +1,10 @@
+# Execution begins at address 0 
+    .pos 0
+    irmovq stack, %rsp      # Set up stack pointer
+    irmovq 0x200, %r8
+    isubq 0x200, %r8
+    halt                    # Terminate program 
+
+# Stack starts here and grows to lower addresses
+    .pos 0x220
+stack:
