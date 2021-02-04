@@ -1,0 +1,24 @@
+.align 8
+
+.L4:
+
+.quad	.L8	# x = 0
+.quad	.L3	# x = 1
+.quad	.L5	# x = 2
+.quad	.L9	# x = 3
+.quad	.L8	# x = 4
+.quad	.L7	# x = 5
+.quad	.L7	# x = 6
+
+.L8:
+xorq %rbx, %rbx
+.L3:
+xorq %rbx, %rbx
+.L5:
+xorq %rbx, %rbx
+.L9:
+xorq %rbx, %rbx
+.L8:
+xorq %rbx, %rbx
+.L7:
+xorq %rbx, %rbx
