@@ -1,3 +1,9 @@
+.align 8
+.pos 0x120
+.quad 0x123
+.pos 0x100
+.quad 0x456
+
 # Execution begins at address 0 
     .pos 0
 INIT:
