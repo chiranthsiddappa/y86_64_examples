@@ -1,4 +1,21 @@
-.pos 0x100
+.pos 0
+main:
+irmovq stack, %rsp
+# set up
+
+switch_eq:
+rrmovq %rdx, %rcx
+pushq %rdi
+pushq %r8
+irmovq $6, %r8
+subq %r8, %rdi
+popq %r8
+popq %rdi
+jg .L8
+# Loop to add to switch table
+
+
+.pos 0x200
 .align 8
 .L4:
 .quad   .L8     # x = 0
@@ -10,12 +27,23 @@
 .quad   .L7     # x = 6
 
 .L3:
-xorq %rbx, %rbx
+rrmovq %rsi, %rax
+addq %rdx, %rax
 .L5:
-xorq %rbx, %rbx
+rrmovq %rsi, %rax
+jmp .L6
 .L9:
-xorq %rbx, %rbx
-.L8:
-xorq %rbx, %rbx
+irmovq $1, %rax
+.L6:
+addq %rcx, %rax
+ret
 .L7:
-xorq %rbx, %rbx
+irmovq $1, %rax
+subq %rdx, %rax
+ret
+.L8:
+irmovq $2, %rax
+ret
+
+.pos 0x300
+stack:
