@@ -1,6 +1,7 @@
 .pos 0x00
 irmovq Stack, %rsp
 irmovq 0x55, %rbx
+irmovq 0x25, %r8
 call stack_return
 halt
 
@@ -27,12 +28,15 @@ xorq %rbx, %rbx
 .L7:
 xorq %rbx, %rbx
 
-.pos 0x200
-Stack:
-
 stack_return:
     pushq %rbx
+    pushq %r8
     irmovq 0xf5, %rbx
     rrmovq %rbx, %rax
+    addq %r8, %rax
+    popq %r8
     popq %rbx
     ret
+
+.pos 0x200
+Stack:
