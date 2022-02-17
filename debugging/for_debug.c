@@ -1,11 +1,14 @@
 #include <stdio.h>
 
 
-int main() {
+void loop_label() {
   char i;
   for (i = 0; i < 5; i++) {
-  loop_label:
     printf("Loop #%d\n", i);
   }
+}
+
+int main() {
+  loop_label();
   return 0;
 }
