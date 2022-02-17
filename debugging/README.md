@@ -11,3 +11,4 @@ To build the example file, run `make`.
 * `x $register` or `x 0xaddress`
 * `info registers`
 * `objdump -t -d`
+* `strings`
