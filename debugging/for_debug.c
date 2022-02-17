@@ -10,5 +10,6 @@ void loop_label() {
 
 int main() {
   loop_label();
+  printf("All Done!");
   return 0;
 }
