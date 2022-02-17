@@ -12,3 +12,9 @@ To build the example file, run `make`.
 * `info registers`
 * `objdump -t -d`
 * `strings`
+
+## Input to GDB
+
+```
+> run < inputs_file
+```
