@@ -11,8 +11,8 @@ irmovq $6, %r8
 subq %r8, %rdi
 popq %r8
 popq %rdi
-jg .L8
-# Loop to add to switch table
+irmovq .L8, %rbp
+call jump_to
 
 
 .pos 0x200
@@ -43,6 +43,10 @@ subq %rdx, %rax
 ret
 .L8:
 irmovq $2, %rax
+ret
+
+jump_to:
+pushq %rbp
 ret
 
 .pos 0x300
