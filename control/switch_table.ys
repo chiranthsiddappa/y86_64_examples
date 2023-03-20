@@ -13,6 +13,7 @@ popq %r8
 popq %rdi
 irmovq .L8, %rbp
 call jump_to
+halt
 
 
 .pos 0x200
